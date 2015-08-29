@@ -19,18 +19,19 @@ int simpleFileLister::refreshDir(){
 
 //-------------------------------------------------------------
 int simpleFileLister::listDir(string directory){
-	
-	
+
 	bRevSort        = false;
 	entries.clear();
 
-	ofDirectory::reset();
-	int numFiles = ofDirectory::listDir(directory);
+    ofDirectory dir;
+    dir.open(directory);
+
+	int numFiles = dir.listDir(directory); // Here OfDirectory is a bad boy and is not giving the right info
 	entries.assign(numFiles, entry());
 
 	for(int i = 0; i < numFiles; i++){
-		entries[i].filename = ofDirectory::getName(i);
-		entries[i].fullpath = ofDirectory::getPath(i);
+		entries[i].filename = dir.getName(i);
+		entries[i].fullpath = dir.getPath(i);
 	}
 
 	lastDirectory = directory;
