@@ -183,37 +183,37 @@ class ofxControlPanel: public guiBaseObject{
         void draw();
 
 		void mousePressed(ofMouseEventArgs & args){
-			if( fabs( ofGetFrameNum() - lastFrameDrawn ) <= 1 ){
+			if( fabs( (float)ofGetFrameNum() - (float)lastFrameDrawn ) <= 1 ){
 				mousePressed(args.x, args.y, args.button);
 			}
 		}
         
 		void mouseDragged(ofMouseEventArgs & args){
-			if( fabs( ofGetFrameNum() - lastFrameDrawn ) <= 1 ){
+			if( fabs( (float)ofGetFrameNum() - (float)lastFrameDrawn ) <= 1 ){
 				mouseDragged(args.x, args.y, args.button);		
 			}
 		}
 		
         void mouseMoved(ofMouseEventArgs & args){
-            if( fabs( ofGetFrameNum() - lastFrameDrawn ) <= 1 ){
+            if( fabs( (float)ofGetFrameNum() - (float)lastFrameDrawn ) <= 1 ){
                 mouseMoved( args.x, args.y );
             }
 		}
         
 		void mouseReleased(ofMouseEventArgs & args){
-			if( fabs( ofGetFrameNum() - lastFrameDrawn ) <= 1 ){
+			if( fabs( (float)ofGetFrameNum() - (float)lastFrameDrawn ) <= 1 ){
                 mouseReleased(args.x, args.y, args.button);
             }
 		}
 		
 		void keyPressed(ofKeyEventArgs & args){
-			if( fabs( ofGetFrameNum() - lastFrameDrawn ) <= 1 ){		
+			if( fabs( (float)ofGetFrameNum() - (float)lastFrameDrawn ) <= 1 ){		
 				keyPressed(args.key);
 			}
 		}
 		
 		void keyReleased(ofKeyEventArgs & args){
-			if( fabs( ofGetFrameNum() - lastFrameDrawn ) <= 1 ){		
+			if( fabs( (float)ofGetFrameNum() - (float)lastFrameDrawn ) <= 1 ){		
 				keyReleased(args.key);
 			}
 		}
